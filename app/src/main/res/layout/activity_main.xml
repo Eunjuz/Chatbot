@@ -5,46 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#262730"
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <!-- App Title -->
+    <!-- Logo -->
 
     <!-- Chat Window -->
 
-    <!-- Input Field -->
-
-    <!-- Send Button -->
-
-    <TextView
-        android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:fontFamily="@font/days_one"
-        android:text="Matcha Latte"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="68dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.316"
+        app:layout_constraintHorizontal_bias="0.974"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:srcCompat="@drawable/nicai_logo" />
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="417dp"
+        android:layout_width="match_parent"
         android:layout_height="580dp"
-        android:background="#F0F0F0"
+        android:background="#00F0F0F0"
         android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@id/editTextText"
+        app:layout_constraintBottom_toTopOf="@id/inputLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.676">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/chatLinearLayout"
@@ -55,45 +44,65 @@
         </LinearLayout>
     </ScrollView>
 
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="285dp"
-        android:layout_height="57dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="52dp"
-        android:background="#FFFFFF"
-        android:fontFamily="sans-serif-medium"
-        android:hint="Type a message..."
-        android:inputType="text"
+    <!-- Input Field and Send Button Grouped -->
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_input_background"
+        android:orientation="horizontal"
         android:padding="8dp"
-        android:textColor="#000000"
-        android:textColorHint="#888888"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/button"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="52dp"
-        android:backgroundTint="#03DAC5"
-        android:text="Send"
-        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/editTextText" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="72dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="16dp"
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="337dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:elevation="0dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:hint="Type a message..."
+            android:inputType="text"
+            android:padding="13dp"
+            android:shadowColor="@color/white"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:textColorLink="#000000"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:backgroundTint="#7A80ED"
+            android:drawableStart="@drawable/send"
+            android:drawablePadding="8dp"
+            android:elevation="4dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:shadowColor="#E23E3E"
+            android:textColor="#FFFFFF"
+            app:icon="@drawable/send" /> <!-- Adds spacing between icon and text -->
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="66dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00C87272"
+        android:textColorLink="#5AFFFFFF"
+        app:icon="?attr/actionModeCloseDrawable"
+        app:iconTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/matcha" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
